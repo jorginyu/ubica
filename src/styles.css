@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+    background-color: #ffffff;
+    background-image: url("./Alternating-Arrowhead.svg");
+    /* background by SVGBackgrounds.com */
+}
+
+li.markers {
+    font-size: 44px;
+    font-style: bold;
+    position: absolute;
+}
