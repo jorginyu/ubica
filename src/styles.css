@@ -7,8 +7,5 @@ body {
 
 div.contact {
     font-size: 24px;
-    background-color: blue;
-    border-radius: 100px;
-    border-color: black;
-    border-style: solid;
+    font-weight: bold;
 }
