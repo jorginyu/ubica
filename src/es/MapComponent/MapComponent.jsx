@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-
-const API_KEY = 'AIzaSyDWN48voHk9mou2OytndZA8gOPsS077q6s';
+import API_KEY from '../../key';
 
 const contacts = [
   { name: 'Spiderman', lat: 41.529616, lng: 2.434130 },
@@ -10,18 +9,6 @@ const contacts = [
 ];
 
 const MarkersC = (text ) => <div className="contact">{text}</div>;
-
-// const styles = {
-//   color: 'white', 
-//   background: 'grey',
-//   padding: '15px 10px',
-//   display: 'inline-flex',
-//   textAlign: 'center',
-//   alignItems: 'center',
-//   justifyContent: 'center',
-//   borderRadius: '100%',
-//   transform: 'translate(-50%, -50%)'
-// };
 
 const handleApiLoaded = (map, maps) => {
   console.log(map);
