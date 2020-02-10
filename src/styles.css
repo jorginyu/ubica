@@ -5,8 +5,10 @@ body {
     /* background by SVGBackgrounds.com */
 }
 
-li.markers {
-    font-size: 44px;
-    font-style: bold;
-    position: absolute;
+div.contact {
+    font-size: 24px;
+    background-color: blue;
+    border-radius: 100px;
+    border-color: black;
+    border-style: solid;
 }

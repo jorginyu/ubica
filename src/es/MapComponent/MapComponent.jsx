@@ -9,21 +9,23 @@ const contacts = [
   { name: 'Hulk', lat: 41.530192, lng: 2.422994 }
 ];
 
-const MarkersC = (text, lat, lng, key) => 
-  <div key={key} lat={lat} lng={lng}>
-    {text}
-  </div>;
+const MarkersC = (text ) => <div className="contact">{text}</div>;
 
-const styles = {
-  color: 'white', 
-  background: 'grey',
-  padding: '15px 10px',
-  display: 'inline-flex',
-  textAlign: 'center',
-  alignItems: 'center',
-  justifyContent: 'center',
-  borderRadius: '100%',
-  transform: 'translate(-50%, -50%)'
+// const styles = {
+//   color: 'white', 
+//   background: 'grey',
+//   padding: '15px 10px',
+//   display: 'inline-flex',
+//   textAlign: 'center',
+//   alignItems: 'center',
+//   justifyContent: 'center',
+//   borderRadius: '100%',
+//   transform: 'translate(-50%, -50%)'
+// };
+
+const handleApiLoaded = (map, maps) => {
+  console.log(map);
+  console.log(maps);
 };
 
 export default class MapComponent extends Component {
@@ -34,9 +36,10 @@ export default class MapComponent extends Component {
         lat: 41.528452,
         lng: 2.434195
       },
-      zoom: 19
+      zoom: 18
     }
   }
+
 
   render() {
     return (
@@ -46,10 +49,12 @@ export default class MapComponent extends Component {
           bootstrapURLKeys={{ key: API_KEY }}
           defaultCenter={this.state.center}
           defaultZoom={this.state.zoom}
+          yesIWantToUseGoogleMapApiInternals
+          onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
         >
-
-          {contacts.map((contact, i) => {
-            <MarkersC style={styles} key={i} lat={contact.lat} lng={contact.lng} text={contact.name} />
+          
+          {contacts.map((contact,i) => {
+            <MarkersC  position={{lat: contact.lat, lng: contact.lng}} text={contact.name} key={i} />
           })}
 
         </GoogleMapReact>
