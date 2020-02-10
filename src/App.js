@@ -18,7 +18,6 @@ export default class App extends React.Component {
   }
 
   showMap() {
-    console.log('Map displayed');
     this.setState({
       show: 'block'
     });
@@ -29,11 +28,9 @@ export default class App extends React.Component {
       <Provider store={store}>
         <Container>
           <Button onClick={this.showMap} className="mt-5" block color="danger">Encontrar</Button>
-
           <div style={{ display: this.state.show }}>
             <MapComponent />
           </div>
-          
         </Container>
       </Provider>
     );
