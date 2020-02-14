@@ -6,6 +6,9 @@ body {
 }
 
 div.contact {
-    font-size: 24px;
+    vertical-align: middle;
+    text-align: center;
+    text-shadow: 0 0 30px black;
+    color: rgb(0, 119, 255);
     font-weight: bold;
 }
